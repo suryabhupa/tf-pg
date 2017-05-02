@@ -56,10 +56,9 @@ with tf.Session() as sess:
         training_batch_idxs = zip(range(0, len(trX), batch_size), range(batch_size, len(trX)+1, batch_size))
         for start, end in training_batch_idxs:
             _, loss = sess.run([train_op, cost], feed_dict={X: trX[start:end], Y: trY[start:end], p_keep_conv: 0.8, p_keep_hidden: 0.5})
-        print loss
 
         test_idxs = np.arange(len(teX))
         np.random.shuffle(test_idxs)
         test_idxs = test_idxs[0:test_size]
 
-        print i, np.mean(np.argmax(teY[test_indices], axis=1) == sess.run(predict_op, feed_dict = {X: teX[test_idxs], Y: teY[test_idxs], p_keep_conv: 1.0, p_keep_hidden: 1.0}))
+        print i, np.mean(np.argmax(teY[test_idxs], axis=1) == sess.run(predict_op, feed_dict = {X: teX[test_idxs], Y: teY[test_idxs], p_keep_conv: 1.0, p_keep_hidden: 1.0}))
