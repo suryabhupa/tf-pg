@@ -52,4 +52,3 @@ for i in range(num_eps):
 print "Score over time: %s" % str(sum(r_list)/num_eps)
 print "Final Q-value Table"
 print Q
-
