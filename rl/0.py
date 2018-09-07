@@ -2,6 +2,8 @@ import gym
 import numpy as np
 import tensorflow as tf
 
+# Simple throwaway
+
 env = gym.make("FrozenLake-v0")
 
 """
